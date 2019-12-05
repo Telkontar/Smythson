@@ -1,0 +1,271 @@
+.bag {
+   margin-bottom: 60px;
+
+   @include respond_to(tablet) {
+      margin-bottom: 80px;
+      padding: 0 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   @include respond_to(screen) {
+      @include site_width($site_width-desktop + px);
+
+      margin-bottom: 200px;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 85px;
+   }
+
+   @include respond_to(from_bigdesktop) {
+      @include site_width($site_width-bigdesktop + px);
+
+      margin-bottom: 200px;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 115px;
+   }
+}
+
+.handbag {
+   margin-bottom: 50px;
+
+   @include respond_to(tablet) {
+      margin: 0;
+      width: 40%;
+   }
+
+   @include respond_to(screen) {
+      margin: 0;
+      width: 34.666%;
+   }
+
+   @include respond_to(from_bigdesktop) {
+      margin: 0;
+      width: 34.5833%;
+   }
+
+   &-text {
+      padding: 0 20px;
+      font-size: 12px;
+      margin-bottom: 10px;
+
+      @include respond_to(tablet) {
+         padding: 0;
+      }
+
+      @include respond_to(screen) {
+         padding: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         padding: 0;
+         margin-bottom: 15px;
+      }
+   }
+
+   &-title {
+      padding: 0 20px;
+      font-size: 24px;
+      margin-bottom: 20px;
+
+      @include respond_to(tablet) {
+         padding: 0;
+      }
+
+      @include respond_to(screen) {
+         padding: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         padding: 0;
+      }
+   }
+
+   &-image {
+      width: 137%;
+      position: absolute;
+      top: 0;
+      left: -25%;
+
+      @include respond_to(tablet) {
+         width: 100%;
+         left: 0;
+      }
+
+      @include respond_to(screen) {
+         width: 100%;
+         left: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         width: 100%;
+         left: 0;
+      }
+
+      &-wrapper {
+         position: relative;
+         overflow: hidden;
+         width: 76.56%;
+         margin-bottom: 20px;
+
+         @include respond_to(tablet) {
+            margin-bottom: 15px;
+            width: 100%;
+         }
+
+         @include respond_to(screen) {
+            margin-bottom: 20px;
+            width: 100%;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            margin-bottom: 20px;
+            width: 100%;
+         }
+
+         &::after {
+            content: "";
+            display: block;
+            padding-bottom: 85.7%;
+
+            @include respond_to(tablet) {
+               padding-bottom: 75%;
+            }
+
+            @include respond_to(screen) {
+               padding-bottom: 67.3%;
+            }
+
+            @include respond_to(from_bigdesktop) {
+               padding-bottom: 67.47%;
+            }
+         }
+      }
+   }
+
+   &-link {
+      @include sublink;
+
+      margin-left: 20px;
+
+      @include respond_to(tablet) {
+         margin: 0;
+      }
+
+      @include respond_to(screen) {
+         margin: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         margin: 0;
+      }
+   }
+}
+
+.backpack {
+   @include clear_fix;
+
+   position: relative;
+
+   @include respond_to(tablet) {
+      width: 57.14%;
+   }
+
+   @include respond_to(screen) {
+      width: 62.666%;
+   }
+
+   @include respond_to(from_bigdesktop) {
+      width: 62.5%;
+   }
+
+   &-image {
+      width: 137%;
+      position: absolute;
+      top: 0;
+      left: -25%;
+
+      @include respond_to(tablet) {
+         width: 114%;
+         left: 0;
+      }
+
+      @include respond_to(screen) {
+         width: 100%;
+         left: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         width: 100%;
+         left: 0;
+      }
+
+      &-wrapper {
+         float: right;
+         position: relative;
+         overflow: hidden;
+         width: 76.56%;
+
+         @include respond_to(tablet) {
+            float: none;
+            width: 100%;
+         }
+
+         @include respond_to(screen) {
+            float: none;
+            width: 100%;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            float: none;
+            width: 100%;
+         }
+
+         &::after {
+            content: "";
+            display: block;
+            padding-bottom: 114.3%;
+
+            @include respond_to(tablet) {
+               padding-bottom: 100%;
+            }
+
+            @include respond_to(screen) {
+               padding-bottom: 100%;
+            }
+
+            @include respond_to(from_bigdesktop) {
+               padding-bottom: 100%;
+            }
+         }
+      }
+   }
+
+   &-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: $white01;
+      font-weight: $bold;
+
+      @include respond_to(tablet) {
+         font-size: 48px;
+      }
+
+      @include respond_to(screen) {
+         font-size: 48px;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         font-size: 48px;
+      }
+   }
+}

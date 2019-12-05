@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "icons";
+  src: url('../fonts/icons/icons.eot');
+  src: url('../fonts/icons/icons.eot?#iefix') format('eot'),
+  // url('../fonts/icons/icons.woff2') format('woff2'),
+  url('../fonts/icons/icons.woff') format('woff'),
+  url('../fonts/icons/icons.ttf') format('truetype'),
+  url('../fonts/icons/icons.svg#icons') format('svg');
+}
+
+@mixin icon-styles {
+  font-family: "icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+  font-size: 32px;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == arrow {
+  $char: "\E001";
+}
+  @if $filename == bag {
+  $char: "\E002";
+}
+  @if $filename == burger {
+  $char: "\E003";
+}
+  @if $filename == check-mark {
+  $char: "\E004";
+}
+  @if $filename == close {
+  $char: "\E005";
+}
+  @if $filename == heart {
+  $char: "\E006";
+}
+  @if $filename == heartactive {
+  $char: "\E007";
+}
+  @if $filename == minus {
+  $char: "\E008";
+}
+  @if $filename == plus {
+  $char: "\E009";
+}
+  @if $filename == search {
+  $char: "\E00A";
+}
+
+@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+&:#{$insert} {
+  @if $extend {
+    @extend %icon;
+  } @else {
+    @include icon-styles;
+  }
+  content: icon-char($filename);
+}
+}
+
+.icon-arrow {
+  @include icon(arrow);
+}
+.icon-bag {
+  @include icon(bag);
+}
+.icon-burger {
+  @include icon(burger);
+}
+.icon-check-mark {
+  @include icon(check-mark);
+}
+.icon-close {
+  @include icon(close);
+}
+.icon-heart {
+  @include icon(heart);
+}
+.icon-heartactive {
+  @include icon(heartactive);
+}
+.icon-minus {
+  @include icon(minus);
+}
+.icon-plus {
+  @include icon(plus);
+}
+.icon-search {
+  @include icon(search);
+}

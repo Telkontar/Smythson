@@ -1,0 +1,237 @@
+.header {
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+   background: $white01;
+   z-index: 20;
+
+   &-inner {
+      @include respond_to(screen) {
+         @include site_width($site_width-desktop + px);
+      }
+
+      @include respond_to(from_bigdesktop) {
+         @include site_width($site_width-bigdesktop + px);
+      }
+   }
+
+   &-main {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 15px 20px 35px;
+
+
+      @include respond_to(screen) {
+         align-items: center;
+         padding: 15px 0 35px;
+      }
+   }
+
+   //RIGHT SIDE OF HEADER
+   &-actions {
+      flex: 1 1 25%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 50px;
+   }
+
+   &-search {
+      @include icon(search);
+
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+
+      &::before {
+         color: $black01;
+         font-size: 15px;
+
+         @include respond_to(from_tablet_to_infinity) {
+            margin-right: 5px;
+         }
+      }
+
+      &-text {
+         display: none;
+
+         @include respond_to(from_tablet_to_infinity) {
+            display: inherit;
+            font-size: 12px;
+            color: $black01;
+         }
+      }
+   }
+
+   &-account {
+      display: none;
+      position: relative;
+
+      @include respond_to(from_screen) {
+         display: inline-block;
+         margin-right: 30px;
+
+         &-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: absolute;
+
+            &:checked~.header-account-list {
+               display: block;
+            }
+
+            &:checked~.header-account-label {
+               &::before {
+                  transform: rotate(270deg);
+                  color: $blue02;
+               }
+            }
+         }
+
+         &-label {
+            @include select;
+
+            font-size: 12px;
+            z-index: 30;
+            cursor: pointer;
+
+            &::before {
+               margin-left: 5px;
+            }
+         }
+
+         &-list {
+            display: none;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            width: 80px;
+            padding: 50px 10px 20px;
+            border: 1px solid $black01;
+            background: $white01;
+            z-index: 20;
+         }
+
+         &-item {
+            &+& {
+               margin-top: 15px;
+            }
+         }
+
+         &-link {
+            @include text_link;
+         }
+      }
+   }
+
+   &-minicart {
+      @include icon(bag);
+
+      @include respond_to(from_tablet_to_infinity) {
+         display: flex;
+         align-items: center;
+      }
+
+      &::before {
+         color: $black01;
+         font-size: 15px;
+
+         @include respond_to(from_tablet_to_infinity) {
+            display: none;
+         }
+      }
+
+      &-text {
+         display: none;
+
+         @include respond_to(from_tablet_to_infinity) {
+            display: inherit;
+            font-size: 12px;
+            color: $black01;
+            margin-right: 5px;
+         }
+      }
+
+      &-count {
+         display: none;
+
+         @include respond_to(from_tablet_to_infinity) {
+            font-size: 14px;
+            color: $blue02;
+            line-height: 20px;
+            background: $blue01;
+            border-radius: 25px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            display: inline-block;
+         }
+      }
+
+   }
+
+   &-mobile_menu {
+      position: fixed;
+      left: -100%;
+      transition: all 0.5s ease-out;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $white01;
+      padding: 20px;
+   }
+
+   &-localization {
+      display: none;
+
+      @include respond_to(from_screen) {
+         display: flex;
+         flex: 1 1 25%;
+         align-items: center;
+      }
+
+      &-select {
+         padding-right: 10px;
+
+         &-wrapper {
+            @include select;
+
+            margin-bottom: 20px;
+            width: 90px;
+            margin-right: 40px;
+
+            @include respond_to(from_screen) {
+               margin-bottom: 0;
+            }
+         }
+      }
+
+      &-service {
+         font-size: 12px;
+         color: $black01;
+      }
+   }
+
+   &-mobile_account {
+      padding: 15px 0;
+      border-bottom: 1px dashed $grey01;
+
+      &-link {
+         display: block;
+         line-height: 40px;
+         font-size: 13px;
+      }
+   }
+
+   &-service {
+      padding: 15px 0;
+
+      &-link {
+         display: block;
+         line-height: 40px;
+         font-size: 13px;
+      }
+   }
+}

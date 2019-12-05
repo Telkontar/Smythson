@@ -1,0 +1,70 @@
+.burger {
+   min-height: 50px;
+   display: flex;
+   align-items: center;
+   flex: 1 1 25%;
+
+   @include respond_to(from_screen) {
+      display: none;
+   }
+
+   &-toggle {
+      width: 15px;
+      height: 2px;
+      background: $black01;
+      position: relative;
+      z-index: 40;
+
+      &::after,
+      &::before {
+         content: '';
+         width: 15px;
+         height: 2px;
+         background: $black01;
+         position: absolute;
+         left: 0;
+      }
+
+      &::after {
+         top: 4px;
+      }
+
+      &::before {
+         bottom: 4px;
+      }
+   }
+
+   &-checkbox {
+      &:checked~.header-mobile_menu {
+         left: 0;
+         display: flex;
+         flex-direction: column;
+      }
+
+      &:checked~.burger {
+         position: fixed;
+         right: 20px;
+         top: 0;
+         z-index: 20;
+      }
+
+      &:checked~.burger label {
+         transform: rotate(45deg);
+         transition: all 0.5s ease;
+
+         &::before {
+            transform: rotate(270deg);
+
+            bottom: 0;
+         }
+
+         &::after {
+            display: none;
+         }
+      }
+
+      &:not(:checked)~.header-mobile_menu {
+         opacity: 0;
+      }
+   }
+}

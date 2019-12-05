@@ -1,0 +1,86 @@
+.slot {
+   margin-bottom: 80px;
+
+   @include respond_to(tablet) {
+      margin-bottom: 75px;
+   }
+
+   @include respond_to(screen) {
+      margin-bottom: 210px;
+   }
+
+   @include respond_to(from_bigdesktop) {
+      margin-bottom: 210px;
+   }
+
+   &-list {
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   &-item {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      @include respond_to(tablet) {
+         width: 33.3333%;
+      }
+
+      @include respond_to(screen) {
+         width: 33.3333%;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         width: 33.3333%;
+      }
+
+      &::after {
+         content: "";
+         display: block;
+         padding-bottom: 77%;
+      }
+
+      &-image {
+         position: absolute;
+         top: 0;
+         left: 0;
+      }
+
+      &-link {
+         position: absolute;
+         top: 50%;
+         left: 0;
+         right: 0;
+         transform: translateY(-50%);
+         color: $white01;
+         text-align: center;
+      }
+
+      &-text {
+         font-size: 12px;
+         margin-bottom: 10px;
+
+         @include respond_to(screen) {
+            margin-bottom: 20px;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            margin-bottom: 20px;
+         }
+      }
+
+      &-title {
+         font-size: 18px;
+         font-weight: $bold;
+
+         @include respond_to(screen) {
+            font-size: 24px;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            font-size: 24px;
+         }
+      }
+   }
+}

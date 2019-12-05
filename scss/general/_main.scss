@@ -1,0 +1,73 @@
+html {
+   font-family: $font-stack;
+   font-size: $primary-font-size;
+}
+
+body {
+   font-size: $primary-font-size;
+   font-family: $font-stack;
+   color: $black01;
+}
+
+img {
+   width: 100%;
+   display: block;
+}
+
+// HEADINGS
+h1 {
+   font-size: 36px;
+
+   @include respond_to(mobile) {
+      font-size: 24px;
+   }
+}
+
+h2 {
+   font-size: 30px;
+
+   @include respond_to(mobile) {
+      font-size: 20px;
+   }
+}
+
+h3 {
+   font-size: 24px;
+
+   @include respond_to(mobile) {
+      font-size: 18px;
+   }
+}
+
+h4 {
+   font-size: 16px;
+
+   @include respond_to(mobile) {
+      font-size: 14px;
+   }
+}
+
+h5 {
+   font-size: 13px;
+   color: $black01;
+}
+
+// TEXT
+p {
+   font-weight: $regular;
+   font-size: 13px;
+
+   @include respond_to(mobile) {
+      font-size: 12px;
+   }
+}
+
+.main {
+   position: relative;
+}
+
+/*******************
+********************
+CREATE BELOW COMMON CLASSES
+********************
+*******************/

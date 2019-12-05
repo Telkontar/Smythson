@@ -1,0 +1,193 @@
+.travel {
+   margin-bottom: 60px;
+   position: relative;
+
+   @include respond_to(tablet) {
+      padding: 0 34px;
+      margin-bottom: 80px;
+   }
+
+   @include respond_to(screen) {
+      @include site_width($site_width-desktop + px);
+
+      padding: 0;
+      margin-bottom: 200px;
+   }
+
+   @include respond_to(from_bigdesktop) {
+      @include site_width($site_width-bigdesktop + px);
+
+      padding: 0;
+      margin-bottom: 200px;
+   }
+
+   &-image {
+      width: 116%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @include respond_to(tablet) {
+         width: 141%;
+         left: -30%;
+      }
+
+      @include respond_to(screen) {
+         width: 100%;
+         left: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         width: 100%;
+         left: 0;
+      }
+
+      &-wrapper {
+         position: relative;
+         overflow: hidden;
+         margin-bottom: 20px;
+
+         @include respond_to(tablet) {
+            width: 65.7%;
+         }
+
+         @include respond_to(screen) {
+            width: 65.85%;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            width: 65.78%;
+         }
+
+         &::after {
+            content: "";
+            display: block;
+            padding-bottom: 78.125%;
+
+            @include respond_to(tablet) {
+               padding-bottom: 94.57%;
+            }
+
+            @include respond_to(screen) {
+               padding-bottom: 67.13%;
+            }
+
+            @include respond_to(from_bigdesktop) {
+               padding-bottom: 67.05%;
+            }
+         }
+      }
+   }
+
+   &-content {
+      padding: 0 20px;
+
+      @include respond_to(tablet) {
+         width: 48.6%;
+         padding: 0;
+         position: absolute;
+         top: 50%;
+         right: 0;
+         transform: translateY(-50%);
+      }
+
+      @include respond_to(screen) {
+         width: 40.244%;
+         padding: 0;
+         position: absolute;
+         top: 50%;
+         right: 0;
+         transform: translateY(-50%);
+      }
+
+      @include respond_to(from_bigdesktop) {
+         width: 31.56%;
+         padding: 0;
+         position: absolute;
+         top: 50%;
+         right: 115px;
+         transform: translateY(-50%);
+      }
+   }
+
+   &-text {
+      font-size: 12px;
+      margin-bottom: 10px;
+
+      @include respond_to(tablet) {
+         margin-bottom: 20px;
+      }
+
+      @include respond_to(screen) {
+         margin-bottom: 20px;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         margin-bottom: 25px;
+      }
+   }
+
+   &-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+
+      @include respond_to(tablet) {
+         font-size: 36px;
+      }
+
+      @include respond_to(screen) {
+         font-size: 36px;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         font-size: 36px;
+      }
+   }
+
+   &-description {
+      font-size: 14px;
+      line-height: 22px;
+      margin-bottom: 25px;
+
+      @include respond_to(tablet) {
+         font-size: 18px;
+         line-height: 30px;
+         margin-bottom: 55px;
+      }
+
+      @include respond_to(screen) {
+         font-size: 18px;
+         line-height: 30px;
+         margin-bottom: 50px;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         font-size: 18px;
+         line-height: 30px;
+         margin-bottom: 55px;
+      }
+   }
+
+   &-links_list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: -15px;
+   }
+
+   &-links_item {
+      margin-bottom: 15px;
+      width: 50%;
+   }
+
+   &-link {
+      font-size: 12px;
+
+      @include respond_to(screen) {
+         @include link;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         @include link;
+      }
+   }
+}

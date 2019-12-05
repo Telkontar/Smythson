@@ -1,0 +1,18 @@
+.logo {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   flex: 1 1 50%;
+
+   &-link {
+      min-height: 50px;
+   }
+
+   &-additional_link {
+      margin-bottom: 25px;
+   }
+
+   &-hide {
+      display: none;
+   }
+}

@@ -1,0 +1,29 @@
+// UTILS
+@import 'utils/_icons-font.scss';
+@import 'utils/_fonts.scss';
+@import 'utils/var.scss';
+@import 'utils/keyframes.scss';
+@import 'utils/mixins.scss';
+@import 'utils/_inputs.scss';
+@import 'utils/buttons.scss';
+@import 'utils/links.scss';
+
+// GENERAL
+@import 'general/reset.scss';
+@import 'general/main.scss';
+
+// COMPONENTS
+@import 'components/advertise.scss';
+@import 'components/burger.scss';
+@import 'components/logo.scss';
+@import 'components/nav.scss';
+@import 'components/header.scss';
+@import 'components/footer.scss';
+
+// PAGES
+@import 'pages/_banner.scss';
+@import 'pages/_gender.scss';
+@import 'pages/_recommendations.scss';
+@import 'pages/_slot.scss';
+@import 'pages/_travel.scss';
+@import 'pages/_bag.scss';

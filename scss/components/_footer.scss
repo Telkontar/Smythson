@@ -1,0 +1,444 @@
+.footer {
+   background: $grey02;
+
+   @include respond_to(tablet) {
+      background: none;
+   }
+
+   @include respond_to(screen) {
+      background: none;
+   }
+
+   @include respond_to(from_bigdesktop) {
+      background: none;
+   }
+
+   &-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @include respond_to(screen) {
+         justify-content: center;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         justify-content: center;
+      }
+   }
+
+   &-signup {
+      order: 1;
+      flex-basis: 100%;
+      padding: 60px 20px;
+      background: $white01;
+
+      @include respond_to(tablet) {
+         flex-basis: 64.5%;
+         padding: 0 0 80px 35px;
+      }
+
+      @include respond_to(screen) {
+         flex: 1 1 66.66667%;
+         max-width: 396px;
+         padding: 0 0 80px 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         flex: 1 1 66.66667%;
+         max-width: 528px;
+         padding: 0 0 80px 0;
+      }
+
+      &-title {
+         text-transform: uppercase;
+         margin-bottom: 15px;
+         font-size: 14px;
+      }
+
+      &-description {
+         font-size: 12px;
+         line-height: 20px;
+         margin-bottom: 25px;
+      }
+
+      &-form {
+         position: relative;
+      }
+
+      &-input {
+         @include input;
+
+         width: 100%;
+         padding-right: 60px;
+         margin-bottom: 10px;
+      }
+
+      &-input:focus~&-submit,
+      &-input:focus~&-label-check {
+         display: block;
+      }
+
+      &-submit {
+         display: none;
+         position: absolute;
+         top: 0;
+         right: 0;
+         text-transform: uppercase;
+         color: $black01;
+         font-weight: $bold;
+      }
+
+      &-invalid_message {
+         color: $red01;
+         font-size: 12px;
+         display: none;
+      }
+
+      &-label-check {
+         @include checkbox_unchecked;
+
+         position: relative;
+         display: none;
+         padding-left: 25px;
+         font-size: 12px;
+         line-height: 20px;
+         margin-top: 20px;
+
+         &::before {
+            top: 2px;
+         }
+      }
+
+      &-input-check {
+         -moz-appearance: none;
+         -webkit-appearance: none;
+         appearance: none;
+         position: absolute;
+
+         &:checked~.footer-signup-label-check {
+            @include checkbox_checked;
+
+            &::after {
+               top: 2px;
+            }
+         }
+      }
+
+      &-link {
+         display: inline;
+         text-decoration: underline;
+      }
+
+      &-valid_message {
+         font-size: 12px;
+         font-weight: $bold;
+         display: none;
+      }
+   }
+
+   &-payment {
+      order: 3;
+      flex-basis: 100%;
+      padding: 0 20px;
+      margin-bottom: 40px;
+
+      @include respond_to(tablet) {
+         order: 2;
+         flex-basis: 25.5%;
+         padding: 0 35px 0 0;
+         margin: 0;
+      }
+
+      @include respond_to(screen) {
+         flex: 1 1 33.3333%;
+         max-width: 588px;
+         order: 2;
+         flex-basis: auto;
+         padding: 0;
+         margin: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         flex: 1 1 33.3333%;
+         max-width: 784px;
+         order: 2;
+         flex-basis: auto;
+         padding: 0;
+         margin: 0;
+      }
+
+      &-list {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         flex-wrap: wrap;
+
+         @include respond_to(screen) {
+            justify-content: flex-end;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            justify-content: flex-end;
+            padding-right: 50px;
+         }
+      }
+
+      &-item {
+         width: 18.75%;
+
+         @include respond_to(tablet) {
+            width: 50%;
+            margin-bottom: 20px;
+            text-align: center;
+         }
+
+         @include respond_to(screen) {
+            width: auto;
+            margin-bottom: 0;
+            text-align: center;
+
+            &+& {
+               margin-left: 20px;
+            }
+         }
+
+         @include respond_to(from_bigdesktop) {
+            width: auto;
+            margin-bottom: 0;
+            text-align: center;
+
+            &+& {
+               margin-left: 20px;
+            }
+         }
+      }
+
+      &-image {
+         max-width: 60px;
+         display: inline-block;
+      }
+   }
+
+   &-nav {
+      order: 2;
+      flex-basis: 100%;
+      padding: 0 20px;
+
+      @include respond_to(tablet) {
+         order: 3;
+         padding: 0 35px;
+         background: $grey02;
+      }
+
+      @include respond_to(screen) {
+         order: 3;
+         padding: 0;
+         background: $grey02;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         order: 3;
+         padding: 0;
+         background: $grey02;
+      }
+
+      &-list {
+         padding: 60px 0;
+
+         @include respond_to(tablet) {
+            display: flex;
+            justify-content: space-between;
+            padding: 55px 0;
+         }
+
+         @include respond_to(screen) {
+            @include site_width($site_width-desktop + px);
+
+            display: flex;
+            justify-content: space-between;
+            padding: 60px 0 15px;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            @include site_width($site_width-bigdesktop + px);
+
+            display: flex;
+            justify-content: space-between;
+            padding: 60px 0 15px;
+         }
+      }
+
+      &-item {
+         @include icon(minus);
+
+         position: relative;
+
+         @include respond_to(tablet) {
+            &::before {
+               display: none;
+            }
+         }
+
+         @include respond_to(screen) {
+            width: 25%;
+
+            &::before {
+               display: none;
+            }
+         }
+
+         @include respond_to(from_bigdesktop) {
+            width: 25%;
+
+            &::before {
+               display: none;
+            }
+         }
+
+         &+& {
+            margin-top: 30px;
+
+            @include respond_to(tablet) {
+               margin-top: 0;
+            }
+
+            @include respond_to(screen) {
+               margin-top: 0;
+            }
+
+            @include respond_to(from_bigdesktop) {
+               margin-top: 0;
+            }
+         }
+
+         &::before {
+            font-size: 14px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: $black01;
+         }
+      }
+
+      &-label {
+         @include icon(plus);
+
+         font-weight: $bold;
+         font-size: 14px;
+         text-transform: uppercase;
+         color: $black01;
+         position: relative;
+         display: block;
+         border: none;
+
+         @include respond_to(tablet) {
+            &::before {
+               display: none;
+            }
+         }
+
+         @include respond_to(screen) {
+            &::before {
+               display: none;
+            }
+         }
+
+         @include respond_to(from_bigdesktop) {
+            &::before {
+               display: none;
+            }
+         }
+
+         &::before {
+            font-size: 14px;
+            position: absolute;
+            top: 0;
+            right: 0;
+         }
+      }
+
+      &-input {
+         display: none;
+      }
+
+      &-input:checked~&-sublist {
+         display: block;
+      }
+
+      &-input:checked~&-label::before {
+         display: none;
+      }
+
+      &-sublist {
+         display: none;
+         margin-bottom: 40px;
+
+         @include respond_to(tablet) {
+            display: block;
+            margin-bottom: 0;
+         }
+
+         @include respond_to(screen) {
+            display: block;
+            margin-bottom: 0;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            display: block;
+            margin-bottom: 0;
+         }
+      }
+
+      &-subitem {
+         margin-top: 20px;
+      }
+
+      &-sublink {
+         color: $black01;
+
+         @include respond_to(screen) {
+            @include link;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            @include link;
+         }
+      }
+   }
+
+   &-copyright {
+      order: 4;
+      flex-basis: 100%;
+      padding: 20px 20px;
+
+      @include respond_to(tablet) {
+         padding: 45px 35px;
+         background: $grey02;
+      }
+
+      @include respond_to(screen) {
+         padding: 60px 0;
+         background: $grey02;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         padding: 60px 0;
+         background: $grey02;
+      }
+
+      &-inner {
+         @include respond_to(screen) {
+            @include site_width($site_width-desktop + px);
+         }
+
+         @include respond_to(from_bigdesktop) {
+            @include site_width($site_width-bigdesktop + px);
+         }
+      }
+
+      &-content {
+         font-size: 12px;
+      }
+   }
+}

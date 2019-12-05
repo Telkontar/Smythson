@@ -1,0 +1,155 @@
+.banner {
+   &-inner {
+      @include respond_to(from_screen) {
+         display: flex;
+         margin-bottom: 200px;
+         position: relative;
+      }
+   }
+
+   &-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+
+      @include respond_to(from_screen) {
+         width: 125%;
+         right: -18%;
+      }
+
+      &-wrapper {
+         position: relative;
+         overflow: hidden;
+         margin-bottom: 20px;
+
+         @include respond_to(from_screen) {
+            width: 67%;
+            margin-bottom: 0;
+         }
+
+         &::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+
+            @include respond_to(from_screen) {
+               padding-bottom: 125%;
+            }
+         }
+      }
+   }
+
+   &-content {
+      padding: 0 20px;
+
+      @include respond_to(from_screen) {
+         display: flex;
+         justify-content: flex-end;
+         flex-basis: 37%;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         justify-content: center;
+      }
+   }
+
+   &-description {
+      margin-bottom: 60px;
+
+      @include respond_to(from_screen) {
+         position: absolute;
+         left: 51.47%;
+         top: 260px;
+         width: 300px;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         width: 100%;
+      }
+   }
+
+   &-title {
+      margin-bottom: 25px;
+
+      &-refinement {
+         display: block;
+         margin-bottom: 15px;
+
+         &-description {
+            margin-bottom: 60px;
+
+            @include respond_to(from_tablet_to_infinity) {
+               margin-bottom: 80px;
+            }
+         }
+      }
+   }
+
+   &-details {
+      @include respond_to(from_screen) {
+         display: flex;
+         align-self: stretch;
+         align-items: flex-end;
+      }
+   }
+
+
+   &-list {
+      text-align: center;
+      margin-bottom: 60px;
+
+      @include respond_to(from_tablet_to_infinity) {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         margin-bottom: 80px;
+      }
+
+      @include respond_to(from_screen) {
+         margin-bottom: 0;
+         justify-content: center;
+      }
+   }
+
+   &-item {
+      position: relative;
+      padding: 0px 25px;
+
+      @include respond_to(from_tablet) {
+         width: 270px;
+         padding: 0 5px;
+      }
+
+      @include respond_to(from_screen) {
+         width: 310px;
+      }
+
+      &-title {
+         margin-bottom: 10px;
+      }
+
+      &+& {
+         margin-top: 60px;
+
+         &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            margin-bottom: 30px;
+            background:
+               repeating-linear-gradient(to right, $grey03 0, $grey03 5px, transparent 5px, transparent 7px) top no-repeat;
+            background-size: 100% 2px;
+         }
+      }
+   }
+
+   &-text {
+      font-size: 13px;
+      line-height: 20px;
+   }
+
+}

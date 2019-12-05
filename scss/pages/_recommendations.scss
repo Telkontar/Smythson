@@ -1,0 +1,202 @@
+.recommendations {
+   padding: 80px 20px;
+
+   @include respond_to(tablet) {
+      padding: 80px 35px;
+      margin-bottom: 100px;
+   }
+
+   @include respond_to(screen) {
+      @include site_width($site_width-desktop + px);
+
+      padding: 0;
+      margin-bottom: 260px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   @include respond_to(from_bigdesktop) {
+      @include site_width($site_width-bigdesktop + px);
+
+      padding: 0;
+      margin-bottom: 265px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &-text {
+      font-size: 12px;
+      margin-bottom: 10px;
+
+      @include respond_to(tablet) {
+         font-size: 14px;
+         margin-bottom: 25px;
+      }
+
+      @include respond_to(screen) {
+         margin-bottom: 25px;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         margin-bottom: 25px;
+      }
+
+      &-wrapper {
+         @include respond_to(screen) {
+            width: 23%;
+            padding-top: 60px;
+         }
+
+         @include respond_to(from_bigdesktop) {
+            width: 17%;
+            padding-top: 40px;
+         }
+      }
+   }
+
+   &-title {
+      font-size: 24px;
+      margin-bottom: 40px;
+
+      @include respond_to(tablet) {
+         font-size: 36px;
+         margin-bottom: 60px;
+      }
+
+      @include respond_to(screen) {
+         line-height: 40px;
+         font-size: 36px;
+         margin-bottom: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         line-height: 40px;
+         font-size: 36px;
+         margin-bottom: 0;
+      }
+   }
+
+   &-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: -50px;
+
+      @include respond_to(tablet) {
+         margin-bottom: 0;
+      }
+
+      @include respond_to(screen) {
+         width: 74.4%;
+         margin-bottom: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         width: 74.2%;
+         margin-bottom: 0;
+      }
+   }
+
+   &-item {
+      width: 50%;
+      text-align: center;
+      margin-bottom: 50px;
+
+      @include respond_to(tablet) {
+         width: 33.3333%;
+         margin-bottom: 0;
+      }
+
+      @include respond_to(screen) {
+         width: 33.3333%;
+         margin-bottom: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         width: 33.3333%;
+         margin-bottom: 0;
+      }
+   }
+
+   &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &-wrapper {
+         position: relative;
+         margin-bottom: 10px;
+         overflow: hidden;
+
+         &::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+         }
+      }
+   }
+
+   &-link {
+      display: block;
+      font-size: 14px;
+      font-weight: $bold;
+      margin-bottom: 20px;
+
+      @include respond_to(tablet) {
+         display: inline-block;
+         margin-bottom: 0;
+      }
+
+      @include respond_to(screen) {
+         display: inline-block;
+         margin-bottom: 0;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         display: inline-block;
+         margin-bottom: 0;
+      }
+   }
+
+   &-wishlist {
+      @include icon(heart);
+
+      text-align: center;
+
+      @include respond_to(tablet) {
+         margin-left: 10px;
+         vertical-align: middle;
+      }
+
+      @include respond_to(screen) {
+         margin-left: 10px;
+         vertical-align: middle;
+      }
+
+      @include respond_to(from_bigdesktop) {
+         margin-left: 10px;
+         vertical-align: middle;
+      }
+
+      &::before {
+         font-size: 12px;
+      }
+
+      &:hover {
+         @include icon(heartactive);
+
+         &::before {
+            font-size: 12px;
+         }
+      }
+   }
+}
+
+.item-extra {
+   display: none;
+
+   @include respond_to(mobile) {
+      display: block;
+   }
+}

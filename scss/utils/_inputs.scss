@@ -1,0 +1,99 @@
+// TEXT INPUTS
+@mixin input {
+   font-size: 13px;
+   color: $black01;
+   border-bottom: 2px solid $blue01;
+   padding-bottom: 12px;
+
+   &::placeholder {
+      color: $grey04;
+   }
+
+   &:hover,
+   &:focus {
+      border-bottom-color: $blue02;
+   }
+}
+
+// TEXT INPUT ERROR
+@mixin input_error {
+   font-size: 13px;
+   color: $black01;
+   border-bottom: 2px solid $red01;
+   padding-bottom: 12px;
+   margin-bottom: 10px;
+}
+
+// CHECKBOX UNCHECKED
+@mixin checkbox_unchecked {
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border: 2px solid $blue01;
+   }
+}
+
+// CHECKBOX CHECKED
+@mixin checkbox_checked {
+   @include icon(check-mark);
+
+   &::before {
+      color: $white01;
+      font-size: 7px;
+      line-height: 14px;
+      text-align: center;
+      border: none;
+      z-index: 1;
+   }
+
+   &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      background: $blue02;
+   }
+}
+
+// CHECKBOX ERROR
+@mixin checkbox_unchecked-error {
+   margin-bottom: 10px;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      border: 2px solid $red01;
+   }
+}
+
+// SELECT
+@mixin select {
+   @include icon(arrow);
+
+   position: relative;
+   background-color: $white01;
+   display: inline-block;
+
+   &:before {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      margin-left: -15px;
+      transform: rotate(90deg);
+      font-size: 8px;
+      margin-top: -4px;
+      color: $blue01;
+      cursor: pointer;
+   }
+}
